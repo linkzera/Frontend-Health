@@ -9,7 +9,6 @@ import { useLocalDB } from "./context/LocalDB";
 
 export const App = () => {
   const { tableItem, setTableITem, updateData } = useLocalDB();
-  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -65,8 +64,6 @@ export const App = () => {
                   Delete
                 </Button>
                 <EditModal
-                  open={modalOpen}
-                  setOpen={setModalOpen}
                   item={item}
                 />
               </td>

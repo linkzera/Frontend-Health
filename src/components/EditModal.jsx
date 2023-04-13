@@ -3,9 +3,10 @@ import { useLocalDB } from "../context/LocalDB";
 import { Button, Modal, TextField } from "@material-ui/core";
 import { changeOwner } from "../services/services";
 
-export const EditModal = ({ item, open, setOpen }) => {
+export const EditModal = ({ item}) => {
   const { updateData } = useLocalDB();
   const [name, setName] = useState(item?.Record?.name || "");
+  const [open, setOpen] = useState(false);
 
   async function handleEditItem(e) {
     try {
