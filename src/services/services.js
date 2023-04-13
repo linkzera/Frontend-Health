@@ -39,7 +39,7 @@ export async function getHistoryMedicine(id) {
 
 export async function changeOwner(id, item) {
   try {
-    const { data } = await axios.post(`${url}/${path.changeOwn}/${id}`, item);
+    const { data } = await axios.post(`${url}/${path.changeOwn}/${id}`, { name: item });
     return data;
   } catch (error) {
     throw new Error(error);

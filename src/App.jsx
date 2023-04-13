@@ -1,13 +1,15 @@
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { InputTable } from "./InputTable";
-import { useLocalDB } from "./context/LocalDB";
 import { Button } from "@material-ui/core";
 import { deleteMedicine, getAll } from "./services/services";
 import { toast } from "react-toastify";
+import { EditModal } from "./components/EditModal";
+import { useLocalDB } from "./context/LocalDB";
 
 export const App = () => {
   const { tableItem, setTableITem, updateData } = useLocalDB();
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -53,15 +55,20 @@ export const App = () => {
               <td>{item.Record.components}</td>
               <td>{item.Record.lab}</td>
               <td>{item.Record.valid}</td>
-              <td>
+              <td style={{ display: 'flex', alignItems: "center", gap: "1rem" }}>
                 <Button
                   variant="outlined"
                   color="default"
                   style={{ borderColor: "red", color: "red" }}
-                  onClick={()=>{handleDelete(item.Key)}}
+                  onClick={() => { handleDelete(item.Key) }}
                 >
                   Delete
                 </Button>
+                <EditModal
+                  open={modalOpen}
+                  setOpen={setModalOpen}
+                  item={item}
+                />
               </td>
             </tr>
           ))}
