@@ -24,11 +24,11 @@ export const InputTable = () => {
       });
 
       const itemReturn = {
-        id: tableItem ? "MED" + (tableItem.length + 1) : item.id,
-        name: item.name,
+        id: item.id,
         lab: item.lab,
         valid: dateFormattedToBrazil,
         comp: item.comp,
+        name: item.name,
       };
       console.log(itemReturn)
       setItem(initialState);
@@ -55,7 +55,8 @@ export const InputTable = () => {
         }}
         placeholder="ID"
         name="id"
-        value={tableItem ? "MED" + (tableItem.length + 1) : item.Key}
+        onChange={handleChange}
+        value={item.id}
       />
       <TextField
        style={{

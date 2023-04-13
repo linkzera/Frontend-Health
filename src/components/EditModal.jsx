@@ -11,7 +11,6 @@ export const EditModal = ({ item}) => {
   async function handleEditItem(e) {
     try {
       e.preventDefault();
-
       await changeOwner(item?.Key, name);
       await updateData();
       toast("Editado com sucesso", { type: "success" });
