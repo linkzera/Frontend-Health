@@ -7,6 +7,7 @@ const path = {
   getHisMed: "getHistoryMed",
   changeOwn: "changeOwner",
   getOne: "queryOne",
+  delete: "delete",
 };
 
 export async function getAll() {

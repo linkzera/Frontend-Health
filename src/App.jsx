@@ -39,6 +39,7 @@ export const App = () => {
           <tr>
             <th>ID</th>
             <th>NAME</th>
+            <th>COMP</th>
             <th>LAB</th>
             <th>VALID</th>
             <th>ACTION</th>
@@ -49,7 +50,7 @@ export const App = () => {
             <tr key={item.Key}>
               <td>{item.Key}</td>
               <td>{item.Record.name}</td>
-              <td>{item.Record.comp}</td>
+              <td>{item.Record.components}</td>
               <td>{item.Record.lab}</td>
               <td>{item.Record.valid}</td>
               <td>
@@ -57,7 +58,7 @@ export const App = () => {
                   variant="outlined"
                   color="default"
                   style={{ borderColor: "red", color: "red" }}
-                  onClick={handleDelete}
+                  onClick={()=>{handleDelete(item.Key)}}
                 >
                   Delete
                 </Button>
