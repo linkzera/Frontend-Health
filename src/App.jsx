@@ -13,7 +13,8 @@ export const App = () => {
     async function fetchData() {
       try {
         const AllData = await getAll();
-        setTableITem(AllData);
+        const allDataParsed = JSON.parse(AllData.response);
+        setTableITem(allDataParsed);
       } catch (error) {
         toast("Erro ao buscar dados", { type: "error" });
       }
