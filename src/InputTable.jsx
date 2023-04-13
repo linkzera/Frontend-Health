@@ -25,9 +25,9 @@ export const InputTable = () => {
 
       const itemReturn = {
         id: item.id,
+        comp: item.comp,
         lab: item.lab,
         valid: dateFormattedToBrazil,
-        comp: item.comp,
         name: item.name,
       };
       console.log(itemReturn)
