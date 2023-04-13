@@ -11,7 +11,7 @@ export const InputTable = () => {
     name: "",
     lab: "",
     valid: "",
-    owner: "",
+    comp: "",
   };
   const [item, setItem] = useState(initialState);
 
@@ -28,7 +28,7 @@ export const InputTable = () => {
         name: item.name,
         lab: item.lab,
         valid: dateFormattedToBrazil,
-        owner: item.owner,
+        comp: item.comp,
       };
       console.log(itemReturn)
       setItem(initialState);
@@ -69,6 +69,18 @@ export const InputTable = () => {
         value={item.name}
         onChange={handleChange}
       />
+       <TextField
+       style={{
+        backgroundColor: "rgba(255, 255, 255, 0.5)",
+        borderRadius: "5px",
+        padding: "0px 10px",
+      }}
+        placeholder="COMP"
+        name="comp"
+        required
+        value={item.comp}
+        onChange={handleChange}
+      />
       <TextField
        style={{
           backgroundColor: "rgba(255, 255, 255, 0.5)",
@@ -95,18 +107,7 @@ export const InputTable = () => {
         required
         onChange={handleChange}
       />
-      <TextField
-       style={{
-          backgroundColor: "rgba(255, 255, 255, 0.5)",
-          borderRadius: "5px",
-          padding: "0px 10px",
-        }}
-        placeholder="OWNER"
-        name="owner"
-        value={item.owner}
-        required
-        onChange={handleChange}
-      />
+     
       <Button
         variant="contained"
         color="default"

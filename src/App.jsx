@@ -49,6 +49,7 @@ export const App = () => {
             <tr key={item.Key}>
               <td>{item.Key}</td>
               <td>{item.Record.name}</td>
+              <td>{item.Record.comp}</td>
               <td>{item.Record.lab}</td>
               <td>{item.Record.valid}</td>
               <td>

@@ -11,7 +11,8 @@ export default function LocalDBProvider({ children }) {
   async function updateData() {
     try {
       const data = await getAll();
-      setTableITem(data);
+      const dataParsed = JSON.parse(data.response);
+      setTableITem(dataParsed);
     } catch (error) {
       toast("Erro ao atualizar dados, atualize a página e tente novamente", {
         type: "error",
